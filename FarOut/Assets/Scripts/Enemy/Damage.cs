@@ -4,31 +4,34 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    float objecthealth = 100f;
-    float swordDamage = 10f;
-    // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+    public int maxObjecthealth = 100;
+    int currentHealth = 100;
+    int swordDamage = 10;
+    private void Start()
     {
-        if(collision.gameObject.tag == "Weapon") 
-        {
-            objecthealth = objecthealth - swordDamage;
-
-            Debug.Log(objecthealth);
-        }
-        if (objecthealth == 0f)
-        {
-            this.gameObject.SetActive(false);
-        }
-
+        currentHealth = maxObjecthealth;
     }
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.tag == "Weapon") { CombatDamage(swordDamage); }
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+       
+        if(currentHealth <= 0)
+        {
+            ObjectDeath();
+     
+        }
+    }
+    private void ObjectDeath() 
+    {
+        Destroy(this.gameObject);
+    }
+    public void CombatDamage(int damage) 
+    {
+        currentHealth = currentHealth - damage;
+    
     }
 }
