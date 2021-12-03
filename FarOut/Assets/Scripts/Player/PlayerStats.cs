@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public int currentHealth { get; private set; }
     public Stat Damage;
     public Stat Armour;
+ 
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
+  
     public void Damaged(int damage) 
     {
        // damage -= Armour.getVal();

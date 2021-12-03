@@ -1,0 +1,6 @@
+creating a method that checks whether an item has been picked up
+that item will go into an inventory
+inventory checks whether it's a weapon
+if it is a weapon set it to isequipped
+we can then fetch the isequipped weapon damage
+and apply that to the enemy.

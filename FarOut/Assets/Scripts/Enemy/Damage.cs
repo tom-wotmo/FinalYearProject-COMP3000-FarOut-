@@ -6,14 +6,19 @@ public class Damage : MonoBehaviour
 {
     public int maxObjecthealth = 100;
     int currentHealth = 100;
-    int swordDamage = 10;
+    public Weapons weapon;
+  
     private void Start()
     {
         currentHealth = maxObjecthealth;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Weapon") { CombatDamage(swordDamage); }
+       int damage = weapon.weaponDamage;
+        if (other.gameObject.tag == "Weapon")
+        { 
+            CombatDamage(damage); 
+        }
         
     }
     void Update()
@@ -31,6 +36,7 @@ public class Damage : MonoBehaviour
     }
     public void CombatDamage(int damage) 
     {
+       
         currentHealth = currentHealth - damage;
     
     }
