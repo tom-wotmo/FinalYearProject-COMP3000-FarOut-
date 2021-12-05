@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d70196d4212a0e45b5b749c87435d4d, type: 3}
-  m_Name: Sword
+  m_Name: RustyAxe
   m_EditorClassIdentifier: 
-  weaponObj: {fileID: 3920246800955903569, guid: 4f3cc621bc5a33649b02dc02bfe6a2f1, type: 3}
-  weaponName: Sword
-  weaponDamage: 7
+  weaponObj: {fileID: 0}
+  weaponName: New Weapon
+  weaponDamage: 5
   isEquipped: 0
