@@ -6,7 +6,9 @@ public class Weapons : ScriptableObject
 {
     public GameObject weaponObj = null;
     public string weaponName = "New Weapon";
-    public int weaponDamage = 0;
-    public bool isEquipped = false;
+    public int weaponDamage = 1;
+    public bool DamageWeapon = false;
+    public bool WoodResourceWeapon = false;
+    public bool RockResourceWeapon = false;
 
 }

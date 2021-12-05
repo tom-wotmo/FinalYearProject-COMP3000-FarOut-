@@ -10,18 +10,75 @@ public class WeaponDamage : MonoBehaviour
     {
         int damage = currentWeapon.weaponDamage;
 
-        if (other.gameObject.tag == "Humanoid")
+        if (currentWeapon.DamageWeapon == true)
         {
-            damage = damage * 2;
-
-            if (other.TryGetComponent<EnemyHealth>(out var Health))
+            if (other.gameObject.tag == "Humanoid")
             {
+                damage = damage * 2;
 
-                Health.objHealth = Health.objHealth - damage;
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
 
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
+            }
+            else
+            {
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
+
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
             }
         }
-      
+        if (currentWeapon.RockResourceWeapon == true)
+        {
+            if (other.gameObject.tag == "RockResource")
+            {
+                damage = damage * 2;
+
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
+
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
+            }
+            else
+            {
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
+
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
+            }
+        }
+        if (currentWeapon.RockResourceWeapon == true)
+        {
+            if (other.gameObject.tag == "RockResource")
+            {
+                damage = damage * 2;
+
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
+
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
+            }
+            else
+            {
+                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                {
+
+                    Health.objHealth = Health.objHealth - damage;
+
+                }
+            }
+        }
     }
    
 }
