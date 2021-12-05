@@ -56,9 +56,9 @@ public class WeaponDamage : MonoBehaviour
                 }
             }
         }
-        if (currentWeapon.RockResourceWeapon == true)
+        if (currentWeapon.WoodResourceWeapon == true)
         {
-            if (other.gameObject.tag == "RockResource")
+            if (other.gameObject.tag == "WoodResource")
             {
                 damage = damage * 2;
 
