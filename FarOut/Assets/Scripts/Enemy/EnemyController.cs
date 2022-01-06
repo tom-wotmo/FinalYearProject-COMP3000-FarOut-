@@ -8,10 +8,19 @@ public class EnemyController : MonoBehaviour
     public GameObject playerTransform;
     Transform target;
     NavMeshAgent agent;
+    Animator enemyAnimator;
+    float distance;
+    public LayerMask isGround, isPlayer;
+    public float attackRate = 0.1f;
+    bool hasAttacked;
+
+    public float sightRange, attackRange;
+    public bool playerInRange, playerInAttackRange;
     // Start is called before the first frame update
     void Start()
     {
         target = playerTransform.transform;
+        enemyAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -28,6 +37,11 @@ public class EnemyController : MonoBehaviour
             
             }
         }
+        
+    }
+    void getLocation()
+    {
+        distance = Vector3.Distance(target.position, transform.position);
     }
     void targetFace() 
     {
@@ -39,5 +53,27 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+    private void attackPlayer()
+    {
+        agent.SetDestination(transform.position);
+        transform.LookAt(target);
+
+        if (!hasAttacked)
+        {
+            enemyAnimator.SetBool("isWalk", true);
+            enemyAnimator.SetBool("isWalk", true);
+
+            Debug.Log("You are taking damage");
+
+            hasAttacked = true;
+
+            Invoke(nameof(ResetAttack), attackRate);
+        }
+    }
+    private void ResetAttack()
+    {
+        hasAttacked = false;
+        Debug.Log("Resetting Attack");
     }
 }
