@@ -25,6 +25,9 @@ public class WeaponDamage : MonoBehaviour
             }
             else
             {
+                // cannot use this weapon on anything else but Humanoids
+
+                damage = damage * 0;
                 if (other.TryGetComponent<EnemyHealth>(out var Health))
                 {
 
@@ -48,6 +51,9 @@ public class WeaponDamage : MonoBehaviour
             }
             else
             {
+                //cannot use this weapon on anything else but Rocks
+                damage = damage * 0;
+
                 if (other.TryGetComponent<EnemyHealth>(out var Health))
                 {
 
@@ -71,6 +77,9 @@ public class WeaponDamage : MonoBehaviour
             }
             else
             {
+                //cannot use this weapon on anything else but wood
+                damage = damage * 0;
+
                 if (other.TryGetComponent<EnemyHealth>(out var Health))
                 {
 
