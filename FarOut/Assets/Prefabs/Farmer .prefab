@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &8164429259904045128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5783965539245078441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1432276, y: 1.8695563, z: 1.9235569}
+  m_Center: {x: -0.040115356, y: 0.9247413, z: 0.46177858}
+--- !u!114 &5374159547487365338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5783965539245078441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db89ba420d42c2f45ae103393ab2e151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5783965539245227273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +34,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 150176, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
       propertyPath: m_Name
-      value: Farmer
+      value: 'Farmer '
       objectReference: {fileID: 0}
     - target: {fileID: 472458, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
       propertyPath: m_RootOrder
@@ -61,3 +86,8 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: cb0fd72625481134cafda0afba980c32, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
+--- !u!1 &5783965539245078441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 150176, guid: 4b94a93fa70935041b61d500fb573a22, type: 3}
+  m_PrefabInstance: {fileID: 5783965539245227273}
+  m_PrefabAsset: {fileID: 0}
