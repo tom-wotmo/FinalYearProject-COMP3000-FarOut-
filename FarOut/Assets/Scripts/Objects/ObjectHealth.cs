@@ -4,12 +4,36 @@ using UnityEngine;
 
 public class ObjectHealth : MonoBehaviour
 {
-    public int objHealth = 1;
-    public void takeDamage(int damage) 
+    public int objHealth = 100;
+    public NewObject NewObject;
+    void Start()
     {
-        objHealth = objHealth - damage; //can add multipliers here for damage difference
+        StartCoroutine(RejenerateHealth());
+    }
+    IEnumerator RejenerateHealth()
+    {
+        int regen = NewObject.amountToRegen;
 
-        if(objHealth <= 0) 
+        int time = NewObject.timeToRegenSeconds;
+
+
+        while (true)
+        {
+            if (objHealth < 100)
+            {
+                objHealth += regen;
+                yield return new WaitForSeconds(time);
+            }
+            else { yield return true; }
+        }
+    }
+    private void Update()
+    {
+        ObjectDeath();
+    }
+    void ObjectDeath()
+    {
+        if (objHealth <= 0)
         {
             Destroy(this.gameObject);
         }

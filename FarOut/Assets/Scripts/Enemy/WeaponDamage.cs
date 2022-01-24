@@ -22,19 +22,9 @@ public class WeaponDamage : MonoBehaviour
                     Health.objHealth = Health.objHealth - damage;
 
                 }
+
             }
-            else
-            {
-                // cannot use this weapon on anything else but Humanoids
-
-                damage = damage * 0;
-                if (other.TryGetComponent<EnemyHealth>(out var Health))
-                {
-
-                    Health.objHealth = Health.objHealth - damage;
-
-                }
-            }
+          
         }
         if (currentWeapon.RockResourceWeapon == true)
         {
@@ -42,7 +32,7 @@ public class WeaponDamage : MonoBehaviour
             {
                 damage = damage * 2;
 
-                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
                     Health.objHealth = Health.objHealth - damage;
@@ -54,10 +44,10 @@ public class WeaponDamage : MonoBehaviour
                 //cannot use this weapon on anything else but Rocks
                 damage = damage * 0;
 
-                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                if (other.TryGetComponent<ObjectHealth>(out var iHealth))
                 {
 
-                    Health.objHealth = Health.objHealth - damage;
+                    iHealth.objHealth = iHealth.objHealth - damage;
 
                 }
             }
@@ -68,7 +58,7 @@ public class WeaponDamage : MonoBehaviour
             {
                 damage = damage * 2;
 
-                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
                     Health.objHealth = Health.objHealth - damage;
@@ -80,10 +70,10 @@ public class WeaponDamage : MonoBehaviour
                 //cannot use this weapon on anything else but wood
                 damage = damage * 0;
 
-                if (other.TryGetComponent<EnemyHealth>(out var Health))
+                if (other.TryGetComponent<ObjectHealth>(out var iHealth))
                 {
 
-                    Health.objHealth = Health.objHealth - damage;
+                    iHealth.objHealth = iHealth.objHealth - damage;
 
                 }
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    int playerHealth = 100;
+    private int playerHealth = 100;
    
 
     void Start()
