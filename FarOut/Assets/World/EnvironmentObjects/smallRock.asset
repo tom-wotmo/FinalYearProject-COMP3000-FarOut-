@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: smallRock
   m_EditorClassIdentifier: 
   objectName: smallRock
-  amountToRegen: 100
-  timeToRegenSeconds: 300
+  amountToRegen: 10
+  timeToRegenSeconds: 10

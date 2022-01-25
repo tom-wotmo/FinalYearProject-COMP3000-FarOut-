@@ -14,7 +14,6 @@ public class WeaponDamage : MonoBehaviour
         {
             if (other.gameObject.tag == "Humanoid")
             {
-                damage = damage * 2;
 
                 if (other.TryGetComponent<EnemyHealth>(out var Health))
                 {
@@ -30,12 +29,11 @@ public class WeaponDamage : MonoBehaviour
         {
             if (other.gameObject.tag == "RockResource")
             {
-                damage = damage * 2;
 
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
-                    Health.objHealth = Health.objHealth - damage;
+                    Health.currObjHealth = Health.currObjHealth - damage;
 
                 }
             }
@@ -47,7 +45,7 @@ public class WeaponDamage : MonoBehaviour
                 if (other.TryGetComponent<ObjectHealth>(out var iHealth))
                 {
 
-                    iHealth.objHealth = iHealth.objHealth - damage;
+                    iHealth.currObjHealth = iHealth.currObjHealth - damage;
 
                 }
             }
@@ -56,12 +54,11 @@ public class WeaponDamage : MonoBehaviour
         {
             if (other.gameObject.tag == "WoodResource")
             {
-                damage = damage * 2;
-
+               
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
-                    Health.objHealth = Health.objHealth - damage;
+                    Health.currObjHealth = Health.currObjHealth - damage;
 
                 }
             }
@@ -73,7 +70,7 @@ public class WeaponDamage : MonoBehaviour
                 if (other.TryGetComponent<ObjectHealth>(out var iHealth))
                 {
 
-                    iHealth.objHealth = iHealth.objHealth - damage;
+                    iHealth.currObjHealth = iHealth.currObjHealth - damage;
 
                 }
             }

@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class ObjectHealth : MonoBehaviour
 {
-    public int objHealth = 100;
+    public int currObjHealth;
+    public int MaxObjHealth;
+    private int minHp = 0;
+    public GameObject objectPrefabLeft;
     public NewObject NewObject;
     void Start()
     {
+    
         StartCoroutine(RejenerateHealth());
+    }
+    private void Update()
+    {
+        ObjectDeath();
     }
     IEnumerator RejenerateHealth()
     {
@@ -16,28 +24,40 @@ public class ObjectHealth : MonoBehaviour
 
         int time = NewObject.timeToRegenSeconds;
 
-
         while (true)
         {
-            if (objHealth < 100)
+            if (currObjHealth < MaxObjHealth)
             {
-                objHealth += regen;
+                currObjHealth += regen;
                 yield return new WaitForSeconds(time);
             }
             else { yield return true; }
         }
     }
-    private void Update()
-    {
-        ObjectDeath();
-    }
     void ObjectDeath()
     {
-        if (objHealth <= 0)
+        if (currObjHealth <= minHp)
         {
-            Destroy(this.gameObject);
-        }
+            Object.Destroy(gameObject, 3f);
 
+            StartCoroutine(DeadPrefab());
+
+            if (this.gameObject.tag == "WoodResource")
+            {
+                Animator treeAnimator = GetComponent<Animator>();
+                treeAnimator.SetTrigger("isCollapse");
+
+            }
+
+        }
+      
+
+    }
+    IEnumerator DeadPrefab()
+    {
+        yield return new WaitForSeconds(1f);
+
+        yield return Instantiate(objectPrefabLeft, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
     }
 
 }

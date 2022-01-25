@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: largeTree
   m_EditorClassIdentifier: 
   objectName: LargePineTree
-  amountToRegen: 300
-  timeToRegenSeconds: 300
+  amountToRegen: 0
+  timeToRegenSeconds: 0
