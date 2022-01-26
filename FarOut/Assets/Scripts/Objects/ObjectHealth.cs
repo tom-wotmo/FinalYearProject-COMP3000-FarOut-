@@ -9,10 +9,13 @@ public class ObjectHealth : MonoBehaviour
     private int minHp = 0;
     public GameObject objectPrefabLeft;
     public NewObject NewObject;
+    bool objDeathBool = true;
     void Start()
     {
     
         StartCoroutine(RejenerateHealth());
+
+
     }
     private void Update()
     {
@@ -36,26 +39,35 @@ public class ObjectHealth : MonoBehaviour
     }
     void ObjectDeath()
     {
-        if (currObjHealth <= minHp)
+        //different deaths for different objects, 
+        if(gameObject.tag == "WoodResource") 
         {
-            Object.Destroy(gameObject, 3f);
-
-            StartCoroutine(DeadPrefab());
-
-            if (this.gameObject.tag == "WoodResource")
+            if (currObjHealth <= minHp && objDeathBool)
             {
+                Object.Destroy(gameObject, 3f);
+
+                StartCoroutine(DeadPrefab());
+
                 Animator treeAnimator = GetComponent<Animator>();
                 treeAnimator.SetTrigger("isCollapse");
 
+                objDeathBool = false;
             }
-
         }
-      
-
+        if(gameObject.tag == "RockResource")
+        {
+            if(currObjHealth <= minHp)
+            {
+                Object.Destroy(gameObject);
+            }
+        }
+ 
     }
+    //spawns some rubble or a stump to show where the player has destroyed stuff
+
     IEnumerator DeadPrefab()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.80f);
 
         yield return Instantiate(objectPrefabLeft, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
     }

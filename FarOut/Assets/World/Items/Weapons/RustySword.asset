@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObj: {fileID: 919132149155446097, guid: 097bbea954e7ce54ca233703d9c23ae2, type: 3}
   weaponName: Rusty Sword
-  weaponDamage: 2
+  weaponDamage: 15
   DamageWeapon: 1
   WoodResourceWeapon: 0
   RockResourceWeapon: 0

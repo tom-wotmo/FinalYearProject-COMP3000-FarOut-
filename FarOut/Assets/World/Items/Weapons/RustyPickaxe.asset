@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObj: {fileID: 0}
   weaponName: RustyPickaxe
-  weaponDamage: 5
+  weaponDamage: 10
   DamageWeapon: 0
   WoodResourceWeapon: 0
   RockResourceWeapon: 1

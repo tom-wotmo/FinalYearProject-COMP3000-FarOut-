@@ -76,5 +76,5 @@ public class WeaponDamage : MonoBehaviour
             }
         }
     }
-   
+
 }
