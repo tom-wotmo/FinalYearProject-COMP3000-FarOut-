@@ -37,7 +37,7 @@ public class ObjectHealth : MonoBehaviour
             else { yield return true; }
         }
     }
-    void ObjectDeath()
+    public void ObjectDeath()
     {
         //different deaths for different objects, 
         if(gameObject.tag == "WoodResource") 
@@ -46,28 +46,34 @@ public class ObjectHealth : MonoBehaviour
             {
                 Object.Destroy(gameObject, 3f);
 
-                StartCoroutine(DeadPrefab());
+                StartCoroutine(DeadPrefab(2.80f));
 
                 Animator treeAnimator = GetComponent<Animator>();
                 treeAnimator.SetTrigger("isCollapse");
 
                 objDeathBool = false;
+
+               // GetComponent<BoxCollider>().
             }
         }
         if(gameObject.tag == "RockResource")
         {
             if(currObjHealth <= minHp)
             {
-                Object.Destroy(gameObject);
+                StartCoroutine(DeadPrefab(0f));
+
+                Object.Destroy(gameObject, 0.5f);
+
+
             }
         }
  
     }
     //spawns some rubble or a stump to show where the player has destroyed stuff
 
-    IEnumerator DeadPrefab()
+    IEnumerator DeadPrefab(float secondsToSpawn)
     {
-        yield return new WaitForSeconds(2.80f);
+        yield return new WaitForSeconds(secondsToSpawn);
 
         yield return Instantiate(objectPrefabLeft, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
     }

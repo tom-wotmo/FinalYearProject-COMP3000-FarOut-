@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class WeaponDamage : MonoBehaviour
 {
     public Weapons currentWeapon;
+    [SerializeField]private GameObject floatDamage;
+    private Camera playerCamera;
 
+ 
     private void OnTriggerEnter(Collider other)
     {
+        playerCamera = Camera.main;
+        Quaternion camView = playerCamera.transform.rotation;
         int damage = currentWeapon.weaponDamage;
 
         if (currentWeapon.DamageWeapon == true)
@@ -58,7 +64,15 @@ public class WeaponDamage : MonoBehaviour
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
+                    //Vector3 dmgPos = new Vector3(transform.position.x, transform.position.y, -3.0f);
+
+                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
+
+                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+
                     Health.currObjHealth = Health.currObjHealth - damage;
+
+
 
                 }
             }

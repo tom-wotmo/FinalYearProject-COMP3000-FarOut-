@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-     
+   
     }
 
     // Update is called once per frame
@@ -43,6 +43,8 @@ public class UIManager : MonoBehaviour
         List<InputDevice> devices = new List<InputDevice>();
         InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
         InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices);
+
+      
 
         if (devices.Count > 0)
         {
