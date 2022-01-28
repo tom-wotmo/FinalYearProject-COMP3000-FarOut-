@@ -10,16 +10,12 @@ public class ObjectHealth : MonoBehaviour
     public GameObject objectPrefabLeft;
     public NewObject NewObject;
     bool objDeathBool = true;
-    void Start()
-    {
-    
-        StartCoroutine(RejenerateHealth());
 
-
-    }
     private void Update()
     {
         ObjectDeath();
+
+        StartCoroutine(RejenerateHealth());
     }
     IEnumerator RejenerateHealth()
     {
@@ -58,11 +54,13 @@ public class ObjectHealth : MonoBehaviour
         }
         if(gameObject.tag == "RockResource")
         {
-            if(currObjHealth <= minHp)
+            if(currObjHealth <= minHp && objDeathBool)
             {
                 StartCoroutine(DeadPrefab(0f));
 
                 Object.Destroy(gameObject, 0.5f);
+
+                objDeathBool = false;
 
 
             }

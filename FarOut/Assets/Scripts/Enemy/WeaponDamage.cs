@@ -26,6 +26,10 @@ public class WeaponDamage : MonoBehaviour
 
                     Health.objHealth = Health.objHealth - damage;
 
+                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
+
+                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+
                 }
 
             }
@@ -40,6 +44,10 @@ public class WeaponDamage : MonoBehaviour
                 {
 
                     Health.currObjHealth = Health.currObjHealth - damage;
+
+                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
+
+                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
 
                 }
             }
