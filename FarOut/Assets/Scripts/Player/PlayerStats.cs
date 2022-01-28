@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int playerHealth = 100;
-   
+    [SerializeField]private int playerHealth = 100;
 
-    void Start()
+    void Update()
     {
         StartCoroutine(RejenerateHealth());
+
+        Debug.Log(playerHealth);
     }
+    private void Start()
+    {
+        playerHealth = 100;
+    }
+ 
     //regenerates the players health slowly
     IEnumerator RejenerateHealth()
     {
@@ -26,6 +32,15 @@ public class PlayerStats : MonoBehaviour
             }
             else { yield return true; }
         }
+    }
+    
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+    public void SetPlayerHealth(int health)
+    {
+        playerHealth = health;
     }
 
 
