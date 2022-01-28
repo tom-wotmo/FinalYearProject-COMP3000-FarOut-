@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-     
+   
     }
 
     // Update is called once per frame
@@ -44,13 +44,15 @@ public class UIManager : MonoBehaviour
         InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left | InputDeviceCharacteristics.Controller;
         InputDevices.GetDevicesWithCharacteristics(leftControllerCharacteristics, devices);
 
+      
+
         if (devices.Count > 0)
         {
             targetDevice = devices[0];
 
         }
 
-        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+        targetDevice.TryGetFeatureValue(CommonUsages.menuButton, out bool primaryButtonValue);
         if (primaryButtonValue)
         {
             if (gameIsPaused == true)

@@ -4,76 +4,100 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 10f;
-    public GameObject playerTransform;
-    Transform target;
-    NavMeshAgent agent;
-    Animator enemyAnimator;
-    float distance;
-    public LayerMask isGround, isPlayer;
-    public float attackRate = 0.1f;
-    bool hasAttacked;
+    public NavMeshAgent agent;
+    public Transform player;
+    public LayerMask WhatIsGround, WhatIsPlayer;
+    public Animator enemyController;
+
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
+
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
 
     public float sightRange, attackRange;
-    public bool playerInRange, playerInAttackRange;
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = playerTransform.transform;
-        enemyAnimator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
-    }
+    public bool playerInSightRange, playerInAttackRange;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= lookRadius) 
+        player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        enemyController = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, WhatIsPlayer);
+
+        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+    }
+    private void Patroling()
+    {
+        enemyController.ResetTrigger("IsRun");
+        enemyController.SetTrigger("isIdle");
+
+        if (!walkPointSet) searchWalkPoint();
+
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        if (distanceToWalkPoint.magnitude < 1f) 
+        walkPointSet = false;
+    }
+    private void searchWalkPoint()
+    {
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, WhatIsGround))
+            walkPointSet = true;
+    }
+    private void ChasePlayer()
+    {
+        enemyController.SetTrigger("IsRun");
+
+        agent.SetDestination(player.position);
+
+    }
+    private void AttackPlayer() 
+    {
+        enemyController.ResetTrigger("IsRun");
+        enemyController.SetTrigger("isAttack");
+
+        Debug.Log("Player is being attacked");
+
+        agent.SetDestination(transform.position);
+
+        transform.LookAt(player);
+
+        if (!alreadyAttacked)
         {
-            agent.SetDestination(target.position);
-            if(distance <= agent.stoppingDistance) 
-            {
-                targetFace();
-            
-            }
+            Debug.Log("Player is being attacked");
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
-        
     }
-    void getLocation()
+    
+    private void ResetAttack()
     {
-        distance = Vector3.Distance(target.position, transform.position);
-    }
-    void targetFace() 
-    {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion look = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * 5f);
+        alreadyAttacked = false;
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+
     }
-    private void attackPlayer()
-    {
-        agent.SetDestination(transform.position);
-        transform.LookAt(target);
 
-        if (!hasAttacked)
-        {
-            enemyAnimator.SetBool("isWalk", true);
-            enemyAnimator.SetBool("isWalk", true);
 
-            Debug.Log("You are taking damage");
 
-            hasAttacked = true;
-
-            Invoke(nameof(ResetAttack), attackRate);
-        }
-    }
-    private void ResetAttack()
-    {
-        hasAttacked = false;
-        Debug.Log("Resetting Attack");
-    }
 }

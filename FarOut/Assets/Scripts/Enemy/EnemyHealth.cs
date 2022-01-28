@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     IEnumerator RejenerateHealth()
     {
         int regen = enemy.amountToRegen;
+
         int time = enemy.timeToRegenSeconds;
         while (true)
         {
