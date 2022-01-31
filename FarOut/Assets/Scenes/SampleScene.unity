@@ -4117,6 +4117,10 @@ PrefabInstance:
       propertyPath: floatDamage
       value: 
       objectReference: {fileID: 5858030827285220007, guid: 589bbc0e20065984fb4feb8d987ee3ea, type: 3}
+    - target: {fileID: 423891185, guid: b0ee1073cea574741bdc2c53833343a2, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 423891186, guid: b0ee1073cea574741bdc2c53833343a2, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -4135,11 +4139,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8847170375474220117, guid: b0ee1073cea574741bdc2c53833343a2, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 8847170375474590533, guid: b0ee1073cea574741bdc2c53833343a2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8847170375474590533, guid: b0ee1073cea574741bdc2c53833343a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6732,7 +6736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dcd25da66241244873e4c56d6cb16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objHitFx: {fileID: 3668811560178139628, guid: 296d2336c3132f446a52b3c416eb82c5, type: 3}
+  objHitFx: {fileID: 107883448517978529, guid: fea3fddde0c6b03429153d4feedc1251, type: 3}
 --- !u!1001 &789244940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9917,6 +9921,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1611025102, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1611025103, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -9935,7 +9943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6987771601413999322, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6987771601413999322, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9983,7 +9991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6987771601414294672, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f08a19c691441c4194cad19d542f4c0, type: 3}
