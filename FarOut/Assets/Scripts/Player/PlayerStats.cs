@@ -27,24 +27,6 @@ public class PlayerStats : MonoBehaviour
             else { yield return true; }
         }
     }
-<<<<<<< Updated upstream
-=======
-    public void PlayerDeath()
-    {
-        if (playerHealth <= 0)
-        {
-            Debug.Log("Player Dead.");
-        }
-    }
-    public int GetPlayerHealth()
-    {
-        return playerHealth;
-    }
-    public void SetPlayerHealth(int health)
-    {
-        playerHealth = health;
-    }
->>>>>>> Stashed changes
 
 
 }

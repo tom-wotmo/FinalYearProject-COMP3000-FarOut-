@@ -10,7 +10,6 @@ TagManager:
   - Humanoid
   - RockResource
   - WoodResource
-  - UIpopUp
   layers:
   - Default
   - TransparentFX

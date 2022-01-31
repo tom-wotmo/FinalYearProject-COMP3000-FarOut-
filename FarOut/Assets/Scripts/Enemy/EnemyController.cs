@@ -39,15 +39,15 @@ public class EnemyController : MonoBehaviour
         enemyController.ResetTrigger("IsRun");
         enemyController.SetTrigger("isIdle");
 
-        //if (!walkPointSet) searchWalkPoint();
+        if (!walkPointSet) searchWalkPoint();
 
-        //if (walkPointSet)
-        //    agent.SetDestination(walkPoint);
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
 
-        //Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        //if (distanceToWalkPoint.magnitude < 1f) 
-        //walkPointSet = false;
+        if (distanceToWalkPoint.magnitude < 1f) 
+        walkPointSet = false;
     }
     private void searchWalkPoint()
     {
