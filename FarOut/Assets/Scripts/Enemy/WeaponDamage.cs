@@ -8,6 +8,7 @@ public class WeaponDamage : MonoBehaviour
     public Weapons currentWeapon;
     [SerializeField]private GameObject floatDamage;
     private Camera playerCamera;
+    
 
  
     private void OnTriggerEnter(Collider other)
@@ -26,9 +27,8 @@ public class WeaponDamage : MonoBehaviour
 
                     Health.objHealth = Health.objHealth - damage;
 
-                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
+                    DamageInteger(camView, damage);
 
-                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
 
                 }
 
@@ -45,9 +45,7 @@ public class WeaponDamage : MonoBehaviour
 
                     Health.currObjHealth = Health.currObjHealth - damage;
 
-                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
-
-                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+                    DamageInteger(camView, damage);
 
                 }
             }
@@ -72,15 +70,10 @@ public class WeaponDamage : MonoBehaviour
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
 
-                    //Vector3 dmgPos = new Vector3(transform.position.x, transform.position.y, -3.0f);
-
-                    GameObject damagePoints = Instantiate(floatDamage, transform.position, camView) as GameObject;
-
-                    damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
 
                     Health.currObjHealth = Health.currObjHealth - damage;
 
-
+                    DamageInteger(camView, damage);
 
                 }
             }
@@ -98,5 +91,16 @@ public class WeaponDamage : MonoBehaviour
             }
         }
     }
+    public void DamageInteger(Quaternion iCamView, int iDamage)
+    {
+        if (!floatDamage.scene.IsValid()) 
+        {
+            GameObject damagePoints = Instantiate(floatDamage, transform.position, iCamView) as GameObject;
+
+            damagePoints.transform.GetChild(0).GetComponent<TextMesh>().text = iDamage.ToString();
+        }
+
+    }
+
 
 }
