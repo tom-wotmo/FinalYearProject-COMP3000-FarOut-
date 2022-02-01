@@ -13,7 +13,8 @@ public class EnemyController : MonoBehaviour
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
-    [SerializeField] private int enemyDamage;
+    private int enemyDmg;
+    public NewEnemy enemyStats;
 
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<Animator>();
+        enemyDmg = enemyStats.enemyDamage;
 
         
     }
@@ -100,7 +102,7 @@ public class EnemyController : MonoBehaviour
 
         int currPlayerHealth = player.GetComponent<PlayerStats>().GetPlayerHealth();
 
-        int newHealth = currPlayerHealth - enemyDamage;
+        int newHealth = currPlayerHealth - enemyDmg;
 
         player.GetComponent<PlayerStats>().SetPlayerHealth(newHealth);
     }

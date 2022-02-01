@@ -7,5 +7,6 @@ public class NewEnemy : ScriptableObject
     public string enemyName = "";
     public int amountToRegen = 0;
     public int timeToRegenSeconds = 0;
+    public int enemyDamage = 0;
 
 }
