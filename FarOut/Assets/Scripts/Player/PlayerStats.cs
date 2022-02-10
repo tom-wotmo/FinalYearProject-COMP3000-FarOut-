@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int playerHealth = 100;
-   
+    [SerializeField]private int playerHealth = 100;
+    [SerializeField] private Transform playerRespawn;
+    private GameObject player;
 
-    void Start()
+    void Update()
     {
         StartCoroutine(RejenerateHealth());
+
+        Debug.Log(playerHealth);
+
+        PlayerDeath();
     }
+    private void Start()
+    {
+        playerHealth = 100;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+ 
     //regenerates the players health slowly
     IEnumerator RejenerateHealth()
     {
@@ -26,6 +38,32 @@ public class PlayerStats : MonoBehaviour
             }
             else { yield return true; }
         }
+    }
+    IEnumerator RespawnHealth()
+    {
+        int maxHealth = 100;
+
+        yield return new WaitForSeconds(1);
+
+        SetPlayerHealth(maxHealth);
+        
+    }
+    public void PlayerDeath()
+    {
+        if (playerHealth <= 0)
+        {
+            StartCoroutine(RespawnHealth());
+
+            player.transform.position = playerRespawn.transform.position;
+        }
+    }
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+    public void SetPlayerHealth(int health)
+    {
+        playerHealth = health;
     }
 
 

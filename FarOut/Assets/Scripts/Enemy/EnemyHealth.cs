@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     public int objHealth = 100;
     public NewEnemy enemy;
+    private Animator enemyAnimator;
+    [SerializeField]private NavMeshAgent enemyNav;
+    [SerializeField] private int minHealth = 0;
      void Start()
     {
         StartCoroutine(RejenerateHealth());
+
+        enemyAnimator = GetComponent<Animator>();
     }
     IEnumerator RejenerateHealth()
     {
         int regen = enemy.amountToRegen;
 
         int time = enemy.timeToRegenSeconds;
+
         while (true)
         {
             if (objHealth < 100)
@@ -31,9 +37,19 @@ public class EnemyHealth : MonoBehaviour
     }
     void ObjectDeath() 
     { 
-        if(objHealth <= 0)
+        if(objHealth <= minHealth)
         {
-            Destroy(this.gameObject);
+            //Stops the nav mesh so the enemy doesn't follow us.
+            enemyNav.isStopped = true;
+
+            //sets all our triggers to false and allows the character to die
+            enemyAnimator.ResetTrigger("isAttack");
+            enemyAnimator.ResetTrigger("isIdle");
+            enemyAnimator.ResetTrigger("IsRun");
+            enemyAnimator.SetTrigger("isDead");
+
+            //will destory the object
+            Destroy(gameObject, 3f);
         }
     
     }

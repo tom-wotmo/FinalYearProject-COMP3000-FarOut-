@@ -8,13 +8,17 @@ public class EnemyController : MonoBehaviour
     public Transform player;
     public LayerMask WhatIsGround, WhatIsPlayer;
     public Animator enemyController;
-
+    public PlayerStats playerObj;
+    int currPlayerHealth;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
+    private int enemyDmg;
+    public NewEnemy enemyStats;
 
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    
 
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -24,6 +28,9 @@ public class EnemyController : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<Animator>();
+        enemyDmg = enemyStats.enemyDamage;
+
+        
     }
     private void Update()
     {
@@ -33,6 +40,8 @@ public class EnemyController : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+
+        
     }
     private void Patroling()
     {
@@ -68,10 +77,10 @@ public class EnemyController : MonoBehaviour
     }
     private void AttackPlayer() 
     {
+   
         enemyController.ResetTrigger("IsRun");
         enemyController.SetTrigger("isAttack");
 
-        Debug.Log("Player is being attacked");
 
         agent.SetDestination(transform.position);
 
@@ -79,10 +88,23 @@ public class EnemyController : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            damageAttack();
+
             Debug.Log("Player is being attacked");
+
             alreadyAttacked = true;
+
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+    private void damageAttack()
+    {
+
+        int currPlayerHealth = player.GetComponent<PlayerStats>().GetPlayerHealth();
+
+        int newHealth = currPlayerHealth - enemyDmg;
+
+        player.GetComponent<PlayerStats>().SetPlayerHealth(newHealth);
     }
     
     private void ResetAttack()

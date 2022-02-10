@@ -15,3 +15,4 @@ MonoBehaviour:
   enemyName: Bandit
   amountToRegen: 1
   timeToRegenSeconds: 5
+  enemyDamage: 5
