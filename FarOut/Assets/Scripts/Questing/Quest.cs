@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(menuName = "Quest/QuestFrame")]
 [System.Serializable]
-public class Quest
+public class Quest : ScriptableObject
 {
-    public bool isQuestActive;
-
-    [SerializeField]private string title;
-    [SerializeField]private string description;
-    [SerializeField]private int experience;
-    [SerializeField]private int goldReward;
+    [SerializeField] private bool isQuestActive = false;
+    [SerializeField] private string title;
+    [SerializeField] private string description;
+    [SerializeField] private bool completed;
+    [SerializeField] private List<string> itemTag = new List<string>();
 
     public string GetTitle()
     {
@@ -20,12 +19,19 @@ public class Quest
     {
         return description;
     }
-    public int GetExperience()
+    public bool getComplete()
     {
-        return experience;
+        return completed;
     }
-    public int GetGoldReward()
+    public bool getIsQuestActive()
     {
-        return goldReward;
+        return isQuestActive;
     }
+    public List<string> GetItemTags()
+    {
+        return itemTag;
+    }
+   
+   
+   
 }
