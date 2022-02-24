@@ -21,4 +21,7 @@ MonoBehaviour:
     me? I'm sure I have some equipment an adventurer like you could use.
   completed: 0
   itemTag:
-  - QuestBoulderA1
+  - A1BoulderRock
+  questItem:
+  - {fileID: 2724575619172981729, guid: 4135c4cf8e7c55643b7151b30b810fe3, type: 3}
+  - {fileID: 2724575619172981729, guid: 4135c4cf8e7c55643b7151b30b810fe3, type: 3}

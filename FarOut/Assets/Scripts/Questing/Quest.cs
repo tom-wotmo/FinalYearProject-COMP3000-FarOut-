@@ -10,7 +10,7 @@ public class Quest : ScriptableObject
     [SerializeField] private string description;
     [SerializeField] private bool completed;
     [SerializeField] private List<string> itemTag = new List<string>();
-
+    [SerializeField] private List<GameObject> questItem = new List<GameObject>();
     public string GetTitle()
     {
         return title;
@@ -31,7 +31,10 @@ public class Quest : ScriptableObject
     {
         return itemTag;
     }
-   
-   
-   
+    public List<GameObject> GetQuestItems()
+    {
+        return questItem;
+    }
+
+
 }

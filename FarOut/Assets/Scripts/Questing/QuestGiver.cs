@@ -11,7 +11,8 @@ public class QuestGiver : MonoBehaviour
     [SerializeField]private GameObject player;
     [SerializeField]private GameObject questWindow;
     [SerializeField] private Text questTitle, questDescription;
-     private List<string> questItemTag = new List<string>();
+    private List<string> questItemTag = new List<string>();
+    private List<GameObject> QuestItems = new List<GameObject>();
     string p = "Player";
     private void Start()
     {
@@ -69,10 +70,7 @@ public class QuestGiver : MonoBehaviour
     }
     public void QuestCompletion()
     {
-        foreach (var item in questItemTag)
-        {
-            //check to see if the tags in the game are active or not, e.g. looted or destroyed.
-        }
+        
     }
 
 
