@@ -7,7 +7,7 @@ using UnityEngine.XR;
 public class QuestGiver : MonoBehaviour
 {
     private InputDevice targetDevice;
-    [SerializeField]private Quest quest;
+    [SerializeField]private ScriptedQuest quest;
     [SerializeField]private GameObject player;
     [SerializeField]private GameObject questWindow;
     [SerializeField] private Text questTitle, questDescription;
@@ -30,8 +30,6 @@ public class QuestGiver : MonoBehaviour
     {
         questTitle.text = quest.GetTitle();
         questDescription.text = quest.GetDescription();
-
-        questItemTag = quest.GetItemTags();
 
         foreach (var item in questItemTag)
         {

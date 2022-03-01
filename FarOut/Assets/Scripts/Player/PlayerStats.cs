@@ -7,7 +7,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]private int playerHealth = 100;
     [SerializeField] private Transform playerRespawn;
     private GameObject player;
-
     void Update()
     {
         StartCoroutine(RejenerateHealth());
