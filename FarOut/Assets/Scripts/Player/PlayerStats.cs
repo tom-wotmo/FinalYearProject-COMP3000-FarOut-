@@ -11,8 +11,6 @@ public class PlayerStats : MonoBehaviour
     {
         StartCoroutine(RejenerateHealth());
 
-        Debug.Log(playerHealth);
-
         PlayerDeath();
     }
     private void Start()
