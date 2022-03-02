@@ -44,13 +44,13 @@ public class QuestGiver : MonoBehaviour
     {
         questWindow.SetActive(false);
     }
-    public void PickUpQuest()
+    public void buttonPickUpQuest()
     {
         questAccepted = true;
 
         //do other fancy stuff
     }
-    public void QuestHandIn()
+    public void buttonQuestHandIn()
     {
         GameObject reward = quest.GetReward();
         Instantiate(reward, new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 2), Quaternion.identity);
