@@ -61,14 +61,8 @@ public class WeaponDamage : MonoBehaviour
                
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
-
-               
-
                     DamageIntegerInstans(camView, damage);
                     Health.currObjHealth = Health.currObjHealth - damage;
-
-
-
                 }
             }
             else
