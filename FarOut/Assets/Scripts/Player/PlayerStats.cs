@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
     private GameObject player;
     void Update()
     {
-        StartCoroutine(RejenerateHealth());
+       // StartCoroutine(RejenerateHealth());
 
         PlayerDeath();
     }
