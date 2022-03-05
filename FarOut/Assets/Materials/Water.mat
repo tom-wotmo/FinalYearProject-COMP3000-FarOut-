@@ -77,11 +77,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Depth_Fade: 2
+    - Depth_Fade: 1
     - Foam_Width: 0
     - Height: 0
     - Noise_Scale: 0.3
-    - Water_Scroll_Speed: 1
+    - Water_Scroll_Speed: 0.3
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -109,9 +109,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Deep: {r: 0, g: 0.28358045, b: 0.4716981, a: 0}
+    - Deep: {r: 0, g: 0.18679243, b: 0.31132078, a: 0}
     - Foam_Colour: {r: 0, g: 0, b: 0, a: 0}
-    - Shallow: {r: 0, g: 0.5649142, b: 0.6320754, a: 0}
+    - Shallow: {r: 0, g: 0.48095638, b: 0.5377358, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
