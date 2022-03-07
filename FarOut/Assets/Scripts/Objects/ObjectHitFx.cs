@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectHitFx : MonoBehaviour
 {
 
-    public GameObject objHitFx;
+    [SerializeField]private GameObject objHitFx;
     void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];

@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &789021073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724575619172981729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c533a32b3fea48b6c8e2bb6ff844c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questTag: QuestBoulderA1
+--- !u!1001 &5092322527305649426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2107041514, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: objectPrefabLeft
+      value: 
+      objectReference: {fileID: 3531660289711624119, guid: 54053b1b7a7366d48ab4dd57bb863150, type: 3}
+    - target: {fileID: 7161905711649855219, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_Name
+      value: MediumRock (Quest1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.806196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.8061957
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.8061957
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.10455332
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10455343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6993345
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6993343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507469656052681801, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -197.006
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+--- !u!1 &2724575619172981729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7161905711649855219, guid: 88d6d6bbee76798449c1a8fc05e80352, type: 3}
+  m_PrefabInstance: {fileID: 5092322527305649426}
+  m_PrefabAsset: {fileID: 0}

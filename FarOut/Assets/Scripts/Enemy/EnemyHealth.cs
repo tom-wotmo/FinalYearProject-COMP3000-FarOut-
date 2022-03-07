@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int minHealth = 0;
      void Start()
     {
-        StartCoroutine(RejenerateHealth());
+       // StartCoroutine(RejenerateHealth());
 
         enemyAnimator = GetComponent<Animator>();
     }
