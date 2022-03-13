@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField]private int playerHealth = 100;
-    [SerializeField] private Transform playerRespawn;
-    private GameObject player;
+    [SerializeField]private Transform playerRespawn;
+    [SerializeField]private GameObject player;
     void Update()
     {
        // StartCoroutine(RejenerateHealth());

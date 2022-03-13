@@ -4,24 +4,24 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public Transform player;
-    public LayerMask WhatIsGround, WhatIsPlayer;
-    public Animator enemyController;
-    public PlayerStats playerObj;
+    [SerializeField]private NavMeshAgent agent;
+    [SerializeField]private Transform player;
+    [SerializeField]private LayerMask WhatIsGround, WhatIsPlayer;
+    [SerializeField]private Animator enemyController;
+    [SerializeField]private PlayerStats playerObj;
     int currPlayerHealth;
-    public Vector3 walkPoint;
+    [SerializeField]private Vector3 walkPoint;
     bool walkPointSet;
-    public float walkPointRange;
-    private int enemyDmg;
-    public NewEnemy enemyStats;
+    [SerializeField]private float walkPointRange;
+    [SerializeField]private int enemyDmg;
+    [SerializeField]private NewEnemy enemyStats;
 
-    public float timeBetweenAttacks;
+    [SerializeField]private float timeBetweenAttacks;
     bool alreadyAttacked;
     
 
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    [SerializeField]private float sightRange, attackRange;
+    [SerializeField]private bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
     {

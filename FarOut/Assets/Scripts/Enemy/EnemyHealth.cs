@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
-    public int objHealth = 100;
-    public NewEnemy enemy;
+    [SerializeField]public int objHealth = 100;
+    [SerializeField]private NewEnemy enemy;
     private Animator enemyAnimator;
     [SerializeField]private NavMeshAgent enemyNav;
     [SerializeField] private int minHealth = 0;
@@ -53,5 +53,6 @@ public class EnemyHealth : MonoBehaviour
         }
     
     }
+    public int getObjHealth() { return objHealth; }
 
 }
