@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3670762387818938550}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -821,6 +821,7 @@ MonoBehaviour:
   deSpawnFX: {fileID: 6449963295364172469, guid: ae5a7d6543efb8240a0f3c1c2e7725f9, type: 3}
   deSpawnAudio: {fileID: 8266658513047539465}
   UITooltip: {fileID: 2987351012729221884}
+  thisObject: {fileID: 8268032237677963150}
 --- !u!1 &8267804312888058428
 GameObject:
   m_ObjectHideFlags: 0

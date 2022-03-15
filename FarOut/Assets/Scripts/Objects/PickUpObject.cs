@@ -18,6 +18,7 @@ public class PickUpObject : MonoBehaviour
     [SerializeField] private GameObject deSpawnFX;
     [SerializeField] private AudioSource deSpawnAudio;
     [SerializeField] private GameObject UITooltip;
+    [SerializeField] private GameObject thisObject; // this is because sometimes we're destroying the parent of the object for animations sake
   
     private SkinnedMeshRenderer thisMesh;
     private string p = "Player";
@@ -34,7 +35,7 @@ public class PickUpObject : MonoBehaviour
 
         deSpawnAudio.Play();
 
-        Destroy(gameObject, 3f);
+        Destroy(thisObject, 3f);
         
     }
     private void OnTriggerEnter(Collider other)
