@@ -14,29 +14,42 @@ public class PickUpObject : MonoBehaviour
     //
     //
     //
-
-    private InputDevice targetDevice;
-    [SerializeField] private GameObject player;
+   
+    [SerializeField] private GameObject deSpawnFX;
+    [SerializeField] private AudioSource deSpawnAudio;
+    [SerializeField] private GameObject UITooltip;
+  
+    private SkinnedMeshRenderer thisMesh;
     private string p = "Player";
 
-    private void Start()
+    public void PickUpThisObject()
     {
-        player = GameObject.FindGameObjectWithTag(p);
-        List<InputDevice> devices = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
-        if (devices.Count > 0)
-        {
-            targetDevice = devices[0];
-        }
+        thisMesh = GetComponent<SkinnedMeshRenderer>();
+
+        Destroy(UITooltip);
+
+        thisMesh.enabled = !thisMesh.enabled;
+
+        Instantiate(deSpawnFX, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 3f, gameObject.transform.position.z), Quaternion.identity);
+
+        deSpawnAudio.Play();
+
+        Destroy(gameObject, 3f);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
-
-        if (other.gameObject.tag == p && primaryButtonValue)
+       
+        if(other.gameObject.tag == p && gameObject.activeSelf)
         {
-            Destroy(gameObject);
+            UITooltip.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == p && gameObject.activeSelf)
+        {
+            UITooltip.SetActive(false);
         }
     }
 
