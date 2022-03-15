@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 8266658513047539464}
   - component: {fileID: 8266658513047539465}
   - component: {fileID: 8266658513047539467}
+  - component: {fileID: 1621594069}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -822,6 +823,24 @@ MonoBehaviour:
   deSpawnAudio: {fileID: 8266658513047539465}
   UITooltip: {fileID: 2987351012729221884}
   thisObject: {fileID: 8268032237677963150}
+--- !u!114 &1621594069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267725570610739306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.8773585, g: 0.7247751, b: 0, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8267804312888058428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,7 +1049,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8268032237677963150}
-  m_LocalRotation: {x: -0.041856345, y: -0, z: -0, w: 0.99912363}
+  m_LocalRotation: {x: -0.04185821, y: 0, z: 0, w: 0.9991236}
   m_LocalPosition: {x: -123.22638, y: 11.777985, z: -33.310455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
