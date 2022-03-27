@@ -13,7 +13,6 @@ public class RockHit : MonoBehaviour
         CreateFX(pos, rot);
        
     }
-
     private void CreateFX(Vector3 pos, Quaternion rot)
     {
         GameObject FX = Instantiate(rockHitFX, pos, rot);

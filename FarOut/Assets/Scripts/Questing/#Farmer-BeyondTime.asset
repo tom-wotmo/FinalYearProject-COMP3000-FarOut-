@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35e64618b3eb5a4b9773326810e4e9c, type: 3}
+  m_Name: '#Farmer-BeyondTime'
+  m_EditorClassIdentifier: 
+  isQuestActive: 0
+  title: Beyond my time
+  description: Finally! there have been so few adventurers passing through here recently,
+    the bandit issue has become too dangerous around this area. I could use your
+    help? A large boulder turned up on my property three moons ago! Mountain Trolls?
+    Raining Rocks? Bah who cares! I need it rid of, would you please destroy it for
+    me? I'm sure I have some equipment an adventurer like you could use.
+  completed: 0
+  itemTag:
+  - A1BoulderRock
+  questItem:
+  - {fileID: 2724575619172981729, guid: 4135c4cf8e7c55643b7151b30b810fe3, type: 3}
+  - {fileID: 2724575619172981729, guid: 4135c4cf8e7c55643b7151b30b810fe3, type: 3}

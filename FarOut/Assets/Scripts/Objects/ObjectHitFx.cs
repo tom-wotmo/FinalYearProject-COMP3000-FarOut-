@@ -6,6 +6,7 @@ public class ObjectHitFx : MonoBehaviour
 {
 <<<<<<< Updated upstream
 
+<<<<<<< HEAD
     public GameObject objHitFx;
 =======
     //
@@ -15,6 +16,9 @@ public class ObjectHitFx : MonoBehaviour
     //
     [SerializeField]private GameObject objHitFx;
 >>>>>>> Stashed changes
+=======
+    [SerializeField]private GameObject objHitFx;
+>>>>>>> main
     void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];

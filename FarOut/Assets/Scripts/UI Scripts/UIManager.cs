@@ -10,8 +10,6 @@ public class UIManager : MonoBehaviour
     private InputDevice targetDevice;
     public GameObject pauseMenu;
 
-   
-
     public void ButtonTest()
     {
         Debug.Log("Button works");

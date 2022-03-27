@@ -13,9 +13,9 @@ public class ObjectHealth : MonoBehaviour
 
     private void Update()
     {
-        ObjectDeath();
+       ObjectDeath();
 
-        StartCoroutine(RejenerateHealth());
+       // StartCoroutine(RejenerateHealth());
     }
     IEnumerator RejenerateHealth()
     {
