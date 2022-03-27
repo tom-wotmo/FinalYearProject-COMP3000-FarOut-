@@ -33,7 +33,20 @@ public class EnemyHealth : MonoBehaviour
     }
     private void Update()
     {
+<<<<<<< Updated upstream
         ObjectDeath();
+=======
+        if(objHealth !< maxHealth)
+        {
+            healthBarslider.value = objHealth;
+        }
+        
+        if(objHealth <= minHealth)
+        {
+            ObjectDeath();
+        }
+   
+>>>>>>> Stashed changes
     }
     void ObjectDeath() 
     { 

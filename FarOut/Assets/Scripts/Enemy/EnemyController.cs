@@ -37,36 +37,15 @@ public class EnemyController : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, WhatIsPlayer);
 
+<<<<<<< Updated upstream
         if (!playerInSightRange && !playerInAttackRange) Patroling();
+=======
+>>>>>>> Stashed changes
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (!playerInAttackRange && !playerInSightRange) ResetState();
 
         
-    }
-    private void Patroling()
-    {
-        enemyController.ResetTrigger("IsRun");
-        enemyController.SetTrigger("isIdle");
-
-        if (!walkPointSet) searchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if (distanceToWalkPoint.magnitude < 1f) 
-        walkPointSet = false;
-    }
-    private void searchWalkPoint()
-    {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, WhatIsGround))
-            walkPointSet = true;
     }
     private void ChasePlayer()
     {
@@ -118,6 +97,11 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
 
+    }
+    private void ResetState()
+    {
+        enemyController.ResetTrigger("IsRun");
+        enemyController.SetTrigger("isIdle");
     }
 
 

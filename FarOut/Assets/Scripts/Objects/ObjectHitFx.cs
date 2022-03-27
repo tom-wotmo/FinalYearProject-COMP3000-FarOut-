@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class ObjectHitFx : MonoBehaviour
 {
+<<<<<<< Updated upstream
 
     public GameObject objHitFx;
+=======
+    //
+    //
+    //this script controls the fx of the hit of the objects
+    //
+    //
+    [SerializeField]private GameObject objHitFx;
+>>>>>>> Stashed changes
     void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];
