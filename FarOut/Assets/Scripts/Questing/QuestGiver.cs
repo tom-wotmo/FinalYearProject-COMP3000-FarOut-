@@ -6,6 +6,16 @@ using UnityEngine.XR;
 
 public class QuestGiver : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the npc that gives out quests
+    //
+    //
+    //
+    //
+
     private InputDevice targetDevice;
     [SerializeField] private ScriptedQuest quest;
     [SerializeField] private GameObject player;
@@ -33,6 +43,10 @@ public class QuestGiver : MonoBehaviour
         QuestCompletion();
         questMarkerDeactivate();
     }
+
+    //
+    //opens the quest window
+    //
     public void OpenQuestWindow()
     {
         quest.setActive(true);
@@ -40,6 +54,9 @@ public class QuestGiver : MonoBehaviour
         questTitle.text = quest.GetTitle();
         questDescription.text = quest.GetDescription();
     }
+    //
+    //closes the quest window
+    //
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
@@ -50,6 +67,9 @@ public class QuestGiver : MonoBehaviour
 
         //do other fancy stuff
     }
+    //
+    //action behind the quest button hand in
+    //
     public void buttonQuestHandIn()
     {
         GameObject reward = quest.GetReward();
@@ -59,6 +79,9 @@ public class QuestGiver : MonoBehaviour
         Destroy(gameObject.GetComponent<QuestGiver>());
         Destroy(questMarkerCompleted);
     }
+    //
+    //opens the quest window when in range and or button is pressed
+    //
     public void OnTriggerEnter(Collider other)
     {
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
@@ -68,6 +91,9 @@ public class QuestGiver : MonoBehaviour
             OpenQuestWindow();
         }
     }
+    //
+    //closes the quest window when in range and or button is pressed
+    //
     public void OnTriggerExit(Collider other)
     {
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
@@ -76,6 +102,9 @@ public class QuestGiver : MonoBehaviour
             CloseQuestWindow();
         }
     }
+    //
+    //checks to see if the NPC has a quest active to enable the UI above their head
+    //
     public void questMarkerCheck()
     {
         if(this.gameObject.GetComponent<ScriptedQuest>().isActiveAndEnabled == true)
@@ -83,6 +112,9 @@ public class QuestGiver : MonoBehaviour
             questMarkerInitial.SetActive(true);
         }
     }
+    //
+    //deactivates the quest marker 
+    //
     public void questMarkerDeactivate()
     {
         if (questAccepted && loopBool)
@@ -93,7 +125,9 @@ public class QuestGiver : MonoBehaviour
             loopBool = false;
         }
     }
-    
+    //
+    //
+    //
     public void QuestCompletion()
     {
         bool completion = quest.getComplete();

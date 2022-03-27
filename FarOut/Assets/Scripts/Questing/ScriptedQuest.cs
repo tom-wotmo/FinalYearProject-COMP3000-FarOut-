@@ -16,6 +16,9 @@ public class ScriptedQuest : MonoBehaviour
         ClearEmpty();
         QuestCompletion();
     }
+    //
+    // checks to see if the list of items in the quest is empty, e.g. the given quests have had their npc's killed or the items picked up at which point they're destroyed
+    //
     private void QuestCompletion()
     {
         if (questItem.Count.Equals(0))
@@ -23,7 +26,9 @@ public class ScriptedQuest : MonoBehaviour
             completed = true;
         }
     }
+    //
     //removes any blank game objects from the list when it gets deleted from the list
+    //
     private void ClearEmpty()
     {
         for(var i = questItem.Count - 1; i > -1; i--)
@@ -32,6 +37,9 @@ public class ScriptedQuest : MonoBehaviour
                 questItem.RemoveAt(i);
         }
     } 
+    //
+    //getters and setters
+    //
     public string GetTitle()
     {return title;}
     public string GetDescription()

@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 11400000, guid: befd27d3c96f9e6408561a02b742236a, type: 2}
+  floatDamage: {fileID: 5858030827285220007, guid: 589bbc0e20065984fb4feb8d987ee3ea, type: 3}
 --- !u!114 &423891185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +166,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!65 &2758618614520147137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847170375474220117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14567167, y: 0.95636356, z: 0.05397051}
+  m_Center: {x: -0.0010380776, y: 0.77827525, z: -0.0000009104066}
 --- !u!1001 &8847170375474399563
 PrefabInstance:
   m_ObjectHideFlags: 0

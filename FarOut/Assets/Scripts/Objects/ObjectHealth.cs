@@ -12,10 +12,12 @@ public class ObjectHealth : MonoBehaviour
     bool objDeathBool = true;
 
     private void Update()
-    {
-       ObjectDeath();
-
-       // StartCoroutine(RejenerateHealth());
+    {  
+        if(currObjHealth <= minHp)
+        {
+            ObjectDeath();
+        }
+        
     }
     IEnumerator RejenerateHealth()
     {
