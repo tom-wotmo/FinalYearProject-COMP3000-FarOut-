@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 3410987354679554375}
     - target: {fileID: 2799528825729104126, guid: 100dded3f80a43846a29e6fdf0e82019, type: 3}
       propertyPath: objHealth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2799528825729104126, guid: 100dded3f80a43846a29e6fdf0e82019, type: 3}
       propertyPath: healthBarslider
@@ -619,6 +619,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2758013495682976922}
     m_Modifications:
+    - target: {fileID: 3283589865068365274, guid: 7ae78df864776a5458ada12feae3f21f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3283589865068365274, guid: 7ae78df864776a5458ada12feae3f21f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3704334300968460645, guid: 7ae78df864776a5458ada12feae3f21f, type: 3}
       propertyPath: m_Name
       value: HealthBar

@@ -15,13 +15,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField]private float walkPointRange;
     [SerializeField]private int enemyDmg;
     [SerializeField]private NewEnemy enemyStats;
-
     [SerializeField]private float timeBetweenAttacks;
     bool alreadyAttacked;
-    
-
     [SerializeField]private float sightRange, attackRange;
     [SerializeField]private bool playerInSightRange, playerInAttackRange;
+    Transform originalPoint;
+    
 
     private void Awake()
     {
@@ -29,44 +28,23 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<Animator>();
         enemyDmg = enemyStats.enemyDamage;
-
-        
+       
+    }
+    private void Start()
+    {
+        originalPoint = gameObject.transform;
     }
     private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, WhatIsPlayer);
 
-       // if (!playerInSightRange && !playerInAttackRange) Patroling();
+     
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (!playerInAttackRange && !playerInSightRange) backToIdleState();
 
         
-    }
-    private void Patroling()
-    {
-        enemyController.ResetTrigger("IsRun");
-        enemyController.SetTrigger("isIdle");
-
-        if (!walkPointSet) searchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if (distanceToWalkPoint.magnitude < 1f) 
-        walkPointSet = false;
-    }
-    private void searchWalkPoint()
-    {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, WhatIsGround))
-            walkPointSet = true;
     }
     private void ChasePlayer()
     {
@@ -117,6 +95,19 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+
+    }
+    private void backToIdleState()
+    {
+        enemyController.ResetTrigger("IsRun");
+        enemyController.SetTrigger("isIdle");
+
+        returnToPoint();
+    }
+    private void returnToPoint()
+    {
+        //send the enemy back to a certain point
+        agent.SetDestination(originalPoint.position);
 
     }
 

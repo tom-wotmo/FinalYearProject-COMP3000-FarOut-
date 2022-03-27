@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
     
     void Start()
     {
-        // StartCoroutine(RejenerateHealth());
+      
         objHealth = maxHealth;
 
         enemyAnimator = GetComponent<Animator>();
@@ -47,26 +47,27 @@ public class EnemyHealth : MonoBehaviour
         {
             healthBarslider.value = objHealth;
         }
+        if(objHealth <= minHealth)
+        {
+            ObjectDeath();
+        }
         
    
     }
    
     void ObjectDeath()
     {
-        if (objHealth <= minHealth)
-        {
-            //Stops the nav mesh so the enemy doesn't follow us.
-            enemyNav.isStopped = true;
+        //Stops the nav mesh so the enemy doesn't follow us.
+        enemyNav.isStopped = true;
 
-            //sets all our triggers to false and allows the character to die
-            enemyAnimator.ResetTrigger("isAttack");
-            enemyAnimator.ResetTrigger("isIdle");
-            enemyAnimator.ResetTrigger("IsRun");
-            enemyAnimator.SetTrigger("isDead");
+        //sets all our triggers to false and allows the character to die
+        enemyAnimator.ResetTrigger("isAttack");
+        enemyAnimator.ResetTrigger("isIdle");
+        enemyAnimator.ResetTrigger("IsRun");
+        enemyAnimator.SetTrigger("isDead");
 
-            //will destory the object
-            Destroy(gameObject, 3f);
-        }
+        //will destory the object
+        Destroy(gameObject, 3f);
 
     }
  
