@@ -15,17 +15,11 @@ public class LookAtPlayer : MonoBehaviour
     [SerializeField]private bool playerInSightRange;
     private void Update()
     {
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, WhatIsPlayer);
-        if (playerInSightRange)
-        {
-            lookAtPlayer();
-        }
-
-
+        lookAtPlayer();
     }
     void lookAtPlayer()
     {
-        Vector3 playerTransform = new Vector3(0, player.transform.position.y, 0);
+        Vector3 playerTransform = new Vector3(gameObject.transform.position.x, player.transform.position.y , player.transform.position.z);
         transform.LookAt(playerTransform);
     }
     private void OnDrawGizmosSelected()
