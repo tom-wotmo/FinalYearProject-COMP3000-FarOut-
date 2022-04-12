@@ -2194,15 +2194,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135952583}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.776678, y: 12.027644, z: -74.3208}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1462222748}
   - {fileID: 866214493}
   - {fileID: 1578121188}
-  m_Father: {fileID: 178732132}
-  m_RootOrder: 5
+  m_Father: {fileID: 1992152510}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138124948
 PrefabInstance:
@@ -3143,7 +3143,6 @@ Transform:
   - {fileID: 1510405656}
   - {fileID: 1992152510}
   - {fileID: 1452485646}
-  - {fileID: 135952584}
   - {fileID: 1339952024}
   - {fileID: 519476813}
   - {fileID: 1676731179}
@@ -8901,7 +8900,7 @@ Transform:
   - {fileID: 2043976119}
   - {fileID: 1438474234}
   m_Father: {fileID: 178732132}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &523812663
 PrefabInstance:
@@ -25322,7 +25321,7 @@ Transform:
   - {fileID: 1598216260}
   - {fileID: 1034340089}
   m_Father: {fileID: 178732132}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1341726619
 PrefabInstance:
@@ -25433,7 +25432,7 @@ Transform:
   - {fileID: 421304284}
   - {fileID: 913841947}
   m_Father: {fileID: 178732132}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1360161490
 PrefabInstance:
@@ -32831,20 +32830,20 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8679245, g: 0.77447003, b: 0.48718405, a: 1}
+  m_Color: {r: 0.8018868, g: 0.6898766, b: 0.25342646, a: 1}
   m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: 128
     m_CustomResolution: -1
-    m_Strength: 0
+    m_Strength: 0.5
     m_Bias: 5.79
     m_NormalBias: 2
-    m_NearPlane: 0.1
+    m_NearPlane: 10
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -33293,7 +33292,7 @@ Transform:
   - {fileID: 1523981831}
   - {fileID: 1885106140}
   m_Father: {fileID: 178732132}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1687231429 stripped
 Transform:
@@ -37142,7 +37141,7 @@ Transform:
   - {fileID: 1138277773}
   - {fileID: 67820557}
   m_Father: {fileID: 178732132}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1908833033 stripped
 Transform:
@@ -39045,6 +39044,7 @@ Transform:
   m_Children:
   - {fileID: 5422155800511458146}
   - {fileID: 4038438492768270551}
+  - {fileID: 135952584}
   m_Father: {fileID: 178732132}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42270,13 +42270,13 @@ Light:
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: 128
     m_CustomResolution: -1
-    m_Strength: 0.058
+    m_Strength: 0.5
     m_Bias: 4.79
     m_NormalBias: 2
-    m_NearPlane: 1.55
+    m_NearPlane: 10
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -42340,7 +42340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UsePipelineSettings: 0
+  m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
 --- !u!1001 &2140382836
 PrefabInstance:
