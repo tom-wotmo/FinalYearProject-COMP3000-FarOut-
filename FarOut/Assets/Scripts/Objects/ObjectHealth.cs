@@ -7,9 +7,10 @@ public class ObjectHealth : MonoBehaviour
     public int currObjHealth;
     public int MaxObjHealth;
     private int minHp = 0;
-    public GameObject objectPrefabLeft;
-    public NewObject NewObject;
+    [SerializeField]private GameObject objectPrefabLeft;
+    [SerializeField]private NewObject NewObject;
     bool objDeathBool = true;
+    string rock = "RockResource";
 
     private void Update()
     {  
