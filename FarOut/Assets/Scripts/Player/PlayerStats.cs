@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the health of the player
+    //
+    //
+    //
+    // 
     [SerializeField]private int playerHealth = 100;
     [SerializeField]private Transform playerRespawn;
     [SerializeField]private GameObject player;

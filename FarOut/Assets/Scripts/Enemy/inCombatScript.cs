@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class inCombatScript : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the activating of the health bars on combat
+    //
+    //
+    //
+    //
     [SerializeField] private GameObject healthBar;
  
     private void OnTriggerEnter(Collider other)

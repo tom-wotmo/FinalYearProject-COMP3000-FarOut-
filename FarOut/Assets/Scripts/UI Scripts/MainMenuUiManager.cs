@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUiManager : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the main menu UI
+    //
+    //
+    //
+    //
     public void ExitGame()
     {
         Application.Quit();

@@ -5,6 +5,15 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the health of enemies
+    //
+    //
+    //
+    //
     [SerializeField] public int objHealth = 100;
     [SerializeField] private NewEnemy enemy;
     private Animator enemyAnimator;

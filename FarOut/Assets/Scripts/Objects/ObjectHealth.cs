@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ObjectHealth : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the health of objects
+    //
+    //
+    //
+    //
     public int currObjHealth;
     public int MaxObjHealth;
     private int minHp = 0;

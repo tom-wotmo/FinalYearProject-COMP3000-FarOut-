@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ObjectHitFx : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the fx of hitting objects
+    //
+    //
+    //
+    //
 
     [SerializeField]private GameObject objHitFx;
     void OnCollisionEnter(Collision collision)

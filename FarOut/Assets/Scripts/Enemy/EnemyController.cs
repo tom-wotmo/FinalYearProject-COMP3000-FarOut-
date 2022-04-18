@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the controlling of the enemies
+    //
+    //
+    //
+    //
     [SerializeField]private NavMeshAgent agent;
     [SerializeField]private Transform player;
     [SerializeField]private LayerMask WhatIsGround, WhatIsPlayer;

@@ -5,7 +5,16 @@ using UnityEngine.XR;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //
+    //
+    //
+    //
+    //----- script to control the UI
+    //
+    //
+    //
+    //
+ 
     public static bool gameIsPaused;
     private InputDevice targetDevice;
     public GameObject pauseMenu;

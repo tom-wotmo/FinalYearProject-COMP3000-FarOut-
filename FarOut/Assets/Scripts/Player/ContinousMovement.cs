@@ -6,6 +6,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ContinousMovement : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the movement of the player
+    //
+    //
+    //
+    //
+
     public float speed;
     public XRNode inputSource;
     public float gravity = -9.81f;

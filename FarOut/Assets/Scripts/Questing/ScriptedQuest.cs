@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ScriptedQuest : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the data of the quests
+    //
+    //
+    //
+    //
     [SerializeField] private bool isQuestActive = false;
     [SerializeField] private string title;
     [SerializeField] private string description,completedDescription;

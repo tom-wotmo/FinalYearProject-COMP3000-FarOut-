@@ -5,6 +5,15 @@ using UnityEngine.XR;
 
 public class WeaponDamage : MonoBehaviour
 {
+    //
+    //
+    //
+    //
+    //----- script to control the damage of the weapons
+    //
+    //
+    //
+    //
     public Weapons currentWeapon;
     [SerializeField]private GameObject floatDamage;
     private Camera playerCamera;

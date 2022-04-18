@@ -23,6 +23,7 @@ public class QuestGiver : MonoBehaviour
     [SerializeField] private Text questTitle, questDescription;
     [SerializeField] private GameObject questMarkerInitial, questMarkerCompleted;
     [SerializeField] private GameObject acceptButton, completeButton;
+    [SerializeField] private GameObject environmentObjectsOld, environmentObjectsNew;
     private bool questAccepted = false;
     bool loopBool = true;
     private string p = "Player";
@@ -43,7 +44,6 @@ public class QuestGiver : MonoBehaviour
         QuestCompletion();
         questMarkerDeactivate();
     }
-
     //
     //opens the quest window
     //
@@ -60,6 +60,14 @@ public class QuestGiver : MonoBehaviour
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
+    }
+    //
+    //used to update the world objects
+    //
+    public void WorldChange()
+    {
+        environmentObjectsOld.SetActive(false);
+        environmentObjectsNew.SetActive(true);
     }
     public void buttonPickUpQuest()
     {
