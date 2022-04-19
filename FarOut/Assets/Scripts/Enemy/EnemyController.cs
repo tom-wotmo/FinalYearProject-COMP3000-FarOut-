@@ -13,21 +13,22 @@ public class EnemyController : MonoBehaviour
     //
     //
     //
+
     [SerializeField]private NavMeshAgent agent;
     [SerializeField]private Transform player;
     [SerializeField]private LayerMask WhatIsGround, WhatIsPlayer;
     [SerializeField]private Animator enemyController;
     [SerializeField]private PlayerStats playerObj;
-    int currPlayerHealth;
     [SerializeField]private Vector3 walkPoint;
-    bool walkPointSet;
     [SerializeField]private float walkPointRange;
     [SerializeField]private int enemyDmg;
     [SerializeField]private NewEnemy enemyStats;
     [SerializeField]private float timeBetweenAttacks;
-    bool alreadyAttacked;
     [SerializeField]private float sightRange, attackRange;
     [SerializeField]private bool playerInSightRange, playerInAttackRange;
+    int currPlayerHealth;
+    bool alreadyAttacked;
+    bool walkPointSet;
     Transform originalPoint;
     
 
