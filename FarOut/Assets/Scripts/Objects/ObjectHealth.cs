@@ -13,6 +13,7 @@ public class ObjectHealth : MonoBehaviour
     //
     //
     //
+
     public int currObjHealth;
     public int MaxObjHealth;
     private int minHp = 0;

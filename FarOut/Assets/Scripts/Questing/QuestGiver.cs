@@ -66,7 +66,7 @@ public class QuestGiver : MonoBehaviour
     //
     public void WorldChange()
     {
-        environmentObjectsOld.SetActive(false);
+        Destroy(environmentObjectsOld);
         environmentObjectsNew.SetActive(true);
     }
     public void buttonPickUpQuest()
@@ -86,6 +86,7 @@ public class QuestGiver : MonoBehaviour
         Destroy(gameObject.GetComponent<ScriptedQuest>());
         Destroy(gameObject.GetComponent<QuestGiver>());
         Destroy(questMarkerCompleted);
+        WorldChange(); //this method will update the world
     }
     //
     //opens the quest window when in range and or button is pressed
@@ -147,6 +148,8 @@ public class QuestGiver : MonoBehaviour
             questWindow.SetActive(true);
             completeButton.SetActive(true);
             questDescription.text = quest.GetCompletedDescription();
+
+           
         }
     }
 

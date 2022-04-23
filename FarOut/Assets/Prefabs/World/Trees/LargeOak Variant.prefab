@@ -14,7 +14,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &6853981918217742064
 BoxCollider:
@@ -86,7 +86,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905605002707554, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_Name
-      value: LargeOak Variant
+      value: LargeOak
       objectReference: {fileID: 0}
     - target: {fileID: 1905605002707554, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_TagString
@@ -98,15 +98,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625064748020424, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.828823
+      value: -52.371193
       objectReference: {fileID: 0}
     - target: {fileID: 4625064748020424, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4245152
+      value: -8.053485
       objectReference: {fileID: 0}
     - target: {fileID: 4625064748020424, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 127.35133
+      value: -27.393406
       objectReference: {fileID: 0}
     - target: {fileID: 4625064748020424, guid: c5fa94f9ebb29bd478295e8701712698, type: 3}
       propertyPath: m_LocalRotation.w

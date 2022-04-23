@@ -48,8 +48,8 @@ public class UIManager : MonoBehaviour
 
         }
 
-        targetDevice.TryGetFeatureValue(CommonUsages.menuButton, out bool primaryButtonValue);
-        if (primaryButtonValue)
+        targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+        if (secondaryButtonValue)
         {
             if (gameIsPaused == true)
             {
