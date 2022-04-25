@@ -18,9 +18,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]private GameObject player;
     [SerializeField]private int maximumPlayerHealth, minimumPlayerHealth;
     [SerializeField]private Slider playerHealthSlider;
+    [SerializeField] private int regenAmount, regenRate;
     void Update()
     {
        // StartCoroutine(RejenerateHealth());
+       //if(currPlayerHealth < maximumPlayerHealth)
+       // {
+       //     StartCoroutine(RejenerateHealth());
+       // }
+
         PlayerDeath();
 
         if (currPlayerHealth !< maximumPlayerHealth)
@@ -38,9 +44,7 @@ public class PlayerStats : MonoBehaviour
     //regenerates the players health slowly
     IEnumerator RejenerateHealth()
     {
-        int regenAmount = 0;
-        int regenRate = 0;
-
+      
         while (true)
         {
             if (currPlayerHealth < maximumPlayerHealth)
