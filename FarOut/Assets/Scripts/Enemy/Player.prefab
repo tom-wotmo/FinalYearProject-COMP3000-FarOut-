@@ -1266,6 +1266,7 @@ MonoBehaviour:
   player: {fileID: 0}
   maximumPlayerHealth: 0
   minimumPlayerHealth: 0
+  playerHealthSlider: {fileID: 0}
 --- !u!1 &6842084685889461193
 GameObject:
   m_ObjectHideFlags: 0

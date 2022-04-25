@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     //
@@ -17,11 +17,16 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]private Transform playerRespawn;
     [SerializeField]private GameObject player;
     [SerializeField]private int maximumPlayerHealth, minimumPlayerHealth;
+    [SerializeField]private Slider playerHealthSlider;
     void Update()
     {
        // StartCoroutine(RejenerateHealth());
-
         PlayerDeath();
+
+        if (currPlayerHealth !< maximumPlayerHealth)
+        {
+            playerHealthSlider.value = currPlayerHealth;
+        }
     }
     private void Start()
     {

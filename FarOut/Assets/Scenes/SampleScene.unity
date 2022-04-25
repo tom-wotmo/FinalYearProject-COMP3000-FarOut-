@@ -35787,6 +35787,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1951126257573194467, guid: 945167595793d9a46abe0d31e10c7a2e, type: 3}
   m_PrefabInstance: {fileID: 995840292}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490962732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6842084684560482530, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+  m_PrefabInstance: {fileID: 6842084685724055602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1493654676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57528,7 +57539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842084685857176713, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.53406
+      value: 82.103
       objectReference: {fileID: 0}
     - target: {fileID: 6842084685857176713, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57536,7 +57547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6842084685857176713, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.690155
+      value: -4.77
       objectReference: {fileID: 0}
     - target: {fileID: 6842084685857176713, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57586,6 +57597,10 @@ PrefabInstance:
       propertyPath: playerRespawn
       value: 
       objectReference: {fileID: 745138071}
+    - target: {fileID: 6842084685857176716, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+      propertyPath: playerHealthSlider
+      value: 
+      objectReference: {fileID: 1490962732}
     - target: {fileID: 6842084685857176716, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: maximumPlayerHealth
       value: 100
