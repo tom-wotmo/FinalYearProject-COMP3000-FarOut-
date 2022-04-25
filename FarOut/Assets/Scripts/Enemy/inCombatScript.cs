@@ -14,21 +14,27 @@ public class inCombatScript : MonoBehaviour
     //
     //
     [SerializeField] private GameObject healthBar;
- 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private PlayerStats playerStats;
+    private int PlayerHealth, MaximumPlayerHealth;
+    private void Start()
     {
-        if (other.gameObject.tag == "Player")
+        MaximumPlayerHealth = playerStats.GetMaximumHealth();
+    }
+    private void Update()
+    {
+        PlayerHealth = playerStats.GetPlayerHealth();
+
+        if (PlayerHealth < MaximumPlayerHealth) 
         {
             healthBar.SetActive(true);
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
+        else
         {
             healthBar.SetActive(false);
         }
     }
+
+
 
 
 }

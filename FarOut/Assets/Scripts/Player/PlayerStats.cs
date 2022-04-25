@@ -13,9 +13,10 @@ public class PlayerStats : MonoBehaviour
     //
     //
     // 
-    [SerializeField]private int playerHealth = 100;
+    [SerializeField]private int currPlayerHealth = 100;
     [SerializeField]private Transform playerRespawn;
     [SerializeField]private GameObject player;
+    [SerializeField]private int maximumPlayerHealth, minimumPlayerHealth;
     void Update()
     {
        // StartCoroutine(RejenerateHealth());
@@ -24,7 +25,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void Start()
     {
-        playerHealth = 100;
+        currPlayerHealth = 100;
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -37,9 +38,9 @@ public class PlayerStats : MonoBehaviour
 
         while (true)
         {
-            if (playerHealth < 100)
+            if (currPlayerHealth < maximumPlayerHealth)
             {
-                playerHealth += regenAmount;
+                currPlayerHealth += regenAmount;
                 yield return new WaitForSeconds(regenRate);
             }
             else { yield return true; }
@@ -56,7 +57,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void PlayerDeath()
     {
-        if (playerHealth <= 0)
+        if (currPlayerHealth <= minimumPlayerHealth)
         {
             StartCoroutine(RespawnHealth());
 
@@ -65,11 +66,19 @@ public class PlayerStats : MonoBehaviour
     }
     public int GetPlayerHealth()
     {
-        return playerHealth;
+        return currPlayerHealth;
+    }
+    public int GetMaximumHealth()
+    {
+        return maximumPlayerHealth;
+    }
+    public int GetMinimumHealth()
+    {
+        return minimumPlayerHealth;
     }
     public void SetPlayerHealth(int health)
     {
-        playerHealth = health;
+        currPlayerHealth = health;
     }
 
 
