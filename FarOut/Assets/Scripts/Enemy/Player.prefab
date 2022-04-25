@@ -1261,9 +1261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cb0a19539215343bcc8370d8919bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 100
+  currPlayerHealth: 100
   playerRespawn: {fileID: 0}
   player: {fileID: 0}
+  maximumPlayerHealth: 0
+  minimumPlayerHealth: 0
 --- !u!1 &6842084685889461193
 GameObject:
   m_ObjectHideFlags: 0

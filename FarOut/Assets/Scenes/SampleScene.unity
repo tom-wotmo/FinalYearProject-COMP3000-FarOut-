@@ -8287,6 +8287,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6842084685857176714, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
   m_PrefabInstance: {fileID: 6842084685724055602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &403752121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6842084685857176716, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+  m_PrefabInstance: {fileID: 6842084685724055602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403752120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4cb0a19539215343bcc8370d8919bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &403752123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6842084685857176713, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
@@ -8304,7 +8315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f258ed2e7c8cde9468d6c4527492e844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1058526921}
+  playerStats: {fileID: 403752121}
 --- !u!4 &406108694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06, type: 3}
@@ -24687,6 +24699,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6fea96791b9a14f8990b6e5093b3c3, type: 3}
+--- !u!1 &1058526921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6842084684904119827, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+  m_PrefabInstance: {fileID: 6842084685724055602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1061049745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525433942773134, guid: 39843985b8da784469bb17724f9acb0b, type: 3}
@@ -57569,6 +57586,10 @@ PrefabInstance:
       propertyPath: playerRespawn
       value: 
       objectReference: {fileID: 745138071}
+    - target: {fileID: 6842084685857176716, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+      propertyPath: maximumPlayerHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6842084685857176718, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_Enabled
       value: 1
