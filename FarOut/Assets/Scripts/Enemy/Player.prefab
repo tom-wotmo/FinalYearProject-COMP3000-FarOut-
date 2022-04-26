@@ -1268,6 +1268,8 @@ MonoBehaviour:
   maximumPlayerHealth: 100
   minimumPlayerHealth: 0
   playerHealthSlider: {fileID: 6842084684560482530}
+  regenAmount: 0
+  regenRate: 0
 --- !u!114 &403752127
 MonoBehaviour:
   m_ObjectHideFlags: 0

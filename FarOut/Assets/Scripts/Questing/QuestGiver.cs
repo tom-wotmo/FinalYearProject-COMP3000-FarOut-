@@ -24,6 +24,7 @@ public class QuestGiver : MonoBehaviour
     [SerializeField] private GameObject questMarkerInitial, questMarkerCompleted;
     [SerializeField] private GameObject acceptButton, completeButton;
     [SerializeField] private GameObject environmentObjectsOld, environmentObjectsNew;
+    [SerializeField] private AudioSource completeSound;
     private bool questAccepted = false;
     bool loopBool = true;
     private string p = "Player";
@@ -86,6 +87,7 @@ public class QuestGiver : MonoBehaviour
         Destroy(gameObject.GetComponent<ScriptedQuest>());
         Destroy(gameObject.GetComponent<QuestGiver>());
         Destroy(questMarkerCompleted);
+        completeSound.Play();
         WorldChange(); //this method will update the world
     }
     //
