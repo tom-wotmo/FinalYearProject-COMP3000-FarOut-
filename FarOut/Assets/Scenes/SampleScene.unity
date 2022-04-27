@@ -430,6 +430,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.332
       objectReference: {fileID: 0}
+    - target: {fileID: 8912123817114757678, guid: 07e602f2a9045c3469c573bb9e8fb38e, type: 3}
+      propertyPath: woodHitSound
+      value: 
+      objectReference: {fileID: 1439191412}
     - target: {fileID: 8912123817114902242, guid: 07e602f2a9045c3469c573bb9e8fb38e, type: 3}
       propertyPath: m_Name
       value: 'WoodAxe '
@@ -12076,11 +12080,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4624980582973188, guid: 102a1539484d57f45b707c42e0393d3e, type: 3}
   m_PrefabInstance: {fileID: 472965839}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &473115864 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 473115864, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
-  m_PrefabInstance: {fileID: 4403962894829888053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &473423192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12263,6 +12262,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fe202229726379c42adb32cce7658ce6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e39d418066408246869b4f808abb167, type: 3}
+--- !u!82 &485124569 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+  m_PrefabInstance: {fileID: 2118851757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &486702691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14426,6 +14430,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8027879437292665066, guid: b0f463be81abdae438fe7c8ba1afcc91, type: 3}
   m_PrefabInstance: {fileID: 7097378143920187836}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &557086340 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+  m_PrefabInstance: {fileID: 1708830638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &557822760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3849310301769960998, guid: 4ccdb56a40230954cb6a499269056a4c, type: 3}
@@ -15040,6 +15049,7 @@ MonoBehaviour:
   completeButton: {fileID: 1617524231}
   environmentObjectsOld: {fileID: 1433048010}
   environmentObjectsNew: {fileID: 1400351198}
+  completeSound: {fileID: 1748531078}
 --- !u!65 &582302345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25007,6 +25017,7 @@ MonoBehaviour:
   completeButton: {fileID: 1387221164}
   environmentObjectsOld: {fileID: 2079547957}
   environmentObjectsNew: {fileID: 1695027499}
+  completeSound: {fileID: 485124569}
 --- !u!65 &939685307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36121,6 +36132,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e39d418066408246869b4f808abb167, type: 3}
+--- !u!1 &1310143630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7455861827252622956, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+  m_PrefabInstance: {fileID: 4403962894829888053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1310143632 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+  m_PrefabInstance: {fileID: 4403962894829888053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1312088460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40934,6 +40955,107 @@ Transform:
   m_Father: {fileID: 519476813}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1439191403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8912123817114902242, guid: 07e602f2a9045c3469c573bb9e8fb38e, type: 3}
+  m_PrefabInstance: {fileID: 6643036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1439191412
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439191403}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: da23bd3910eb29a42b94eedd3345eb4d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1442859867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47921,9 +48043,10 @@ MonoBehaviour:
   questMarkerInitial: {fileID: 919132147946553385}
   questMarkerCompleted: {fileID: 4601271075803025969}
   acceptButton: {fileID: 1231813851}
-  completeButton: {fileID: 473115864}
+  completeButton: {fileID: 1310143630}
   environmentObjectsOld: {fileID: 939299477}
   environmentObjectsNew: {fileID: 1018017027}
+  completeSound: {fileID: 1310143632}
 --- !u!114 &1602354549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49902,6 +50025,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
 --- !u!1 &1695027499
@@ -50504,6 +50631,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4403962895102383613, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -51434,6 +51565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d42bbbe9fe446f41aa669ee01abd12d, type: 3}
+--- !u!82 &1748531078 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+  m_PrefabInstance: {fileID: 1692848764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1748567317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 430074, guid: c34c166783f3c744686ef9143de6e3fe, type: 3}
@@ -57790,9 +57926,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isQuestActive: 0
   title: Humble Beginnings
-  description: Help the people round here will you? Return to me once you've assisted
-    the towns people.
-  completedDescription: Well done adventurer, he's a dagger to help you in your quests.
+  description: Help all the villagers around here!
+  completedDescription: 
   completed: 0
   questItem:
   - {fileID: 303270754}
@@ -57820,6 +57955,7 @@ MonoBehaviour:
   completeButton: {fileID: 1227876282}
   environmentObjectsOld: {fileID: 1937499039}
   environmentObjectsNew: {fileID: 199705292}
+  completeSound: {fileID: 557086340}
 --- !u!65 &1977477464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61425,6 +61561,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4403962895102383603, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4403962895102383613, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -61512,6 +61652,10 @@ PrefabInstance:
     - target: {fileID: 5185958855926427079, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
@@ -66842,6 +66986,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8828249913288660851, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f93a2388ef4a1a40a204048d6139f3d, type: 3}
 --- !u!23 &4565967587910867439
@@ -67722,7 +67870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558381663579756698, guid: eefa72202664baf459fbcc1194165c50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.053485
+      value: -8.92
       objectReference: {fileID: 0}
     - target: {fileID: 5558381663579756698, guid: eefa72202664baf459fbcc1194165c50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69425,7 +69573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558381663579756698, guid: eefa72202664baf459fbcc1194165c50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.6289687
+      value: -8.46
       objectReference: {fileID: 0}
     - target: {fileID: 5558381663579756698, guid: eefa72202664baf459fbcc1194165c50, type: 3}
       propertyPath: m_LocalPosition.z
