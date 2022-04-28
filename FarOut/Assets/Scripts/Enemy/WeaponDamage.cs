@@ -17,7 +17,7 @@ public class WeaponDamage : MonoBehaviour
     public Weapons currentWeapon;
     [SerializeField]private GameObject floatDamage;
     private Camera playerCamera;
-    [SerializeField]private AudioSource woodHitSound;
+    [SerializeField]private AudioSource woodHitSound, rockHitSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,7 +47,10 @@ public class WeaponDamage : MonoBehaviour
                 if (other.TryGetComponent<ObjectHealth>(out var Health))
                 {
                     DamageIntegerInstans(camView, damage);
+
                     Health.currObjHealth = Health.currObjHealth - damage;
+                    //play the sound on successful hit
+                    rockHitSound.Play();
                 }
             }
             else

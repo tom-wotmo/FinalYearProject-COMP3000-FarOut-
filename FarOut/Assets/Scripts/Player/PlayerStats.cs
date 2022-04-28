@@ -13,19 +13,25 @@ public class PlayerStats : MonoBehaviour
     //
     //
     // 
-    [SerializeField]private int currPlayerHealth = 100;
+    [SerializeField]private int currPlayerHealth;
     [SerializeField]private Transform playerRespawn;
     [SerializeField]private GameObject player;
     [SerializeField]private int maximumPlayerHealth, minimumPlayerHealth;
     [SerializeField]private Slider playerHealthSlider;
-    [SerializeField] private int regenAmount, regenRate;
+    [SerializeField]private int regenAmount, regenRate;
+    private bool isRegenHealth;
     void Update()
     {
-       // StartCoroutine(RejenerateHealth());
-       //if(currPlayerHealth < maximumPlayerHealth)
-       // {
-       //     StartCoroutine(RejenerateHealth());
-       // }
+        // StartCoroutine(RejenerateHealth());
+        //if(currPlayerHealth < maximumPlayerHealth)
+        // {
+        //     StartCoroutine(RejenerateHealth());
+        // }
+
+        if (currPlayerHealth != maximumPlayerHealth &&!isRegenHealth)
+        {
+            StartCoroutine(RejenerateHealth());
+        }
 
         PlayerDeath();
 
@@ -35,33 +41,38 @@ public class PlayerStats : MonoBehaviour
         }
     }
     private void Start()
-    {
-        currPlayerHealth = 100;
+    { 
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
  
     //regenerates the players health slowly
-    IEnumerator RejenerateHealth()
+    private IEnumerator RejenerateHealth()
     {
-      
-        while (true)
+        isRegenHealth = true;
+        while(currPlayerHealth < maximumPlayerHealth)
         {
-            if (currPlayerHealth < maximumPlayerHealth)
-            {
-                currPlayerHealth += regenAmount;
-                yield return new WaitForSeconds(regenRate);
-            }
-            else { yield return true; }
+            HealthRegen();
+            yield return new WaitForSeconds(regenRate);
+
         }
+        isRegenHealth = false;
+     
     }
+    public void HealthRegen()
+    {
+        Debug.Log("HealthRegen");
+
+        currPlayerHealth += regenAmount;
+    
+    }
+
     IEnumerator RespawnHealth()
     {
-        int maxHealth = 100;
-
+       
         yield return new WaitForSeconds(1);
 
-        SetPlayerHealth(maxHealth);
+        SetPlayerHealth(maximumPlayerHealth);
         
     }
     public void PlayerDeath()
