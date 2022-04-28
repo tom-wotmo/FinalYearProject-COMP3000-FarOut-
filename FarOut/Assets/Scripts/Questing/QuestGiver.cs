@@ -73,6 +73,7 @@ public class QuestGiver : MonoBehaviour
     public void buttonPickUpQuest()
     {
         questAccepted = true;
+        //play the quest sound when picked up
         pickUpSound.Play();
         //do other fancy stuff
     }
