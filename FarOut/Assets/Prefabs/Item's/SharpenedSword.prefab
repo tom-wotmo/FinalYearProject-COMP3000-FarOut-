@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6443419601639417536}
   - component: {fileID: 4710548071861031426}
   - component: {fileID: 989772246315200588}
+  - component: {fileID: -131648433939867426}
   m_Layer: 7
   m_Name: SharpenedSword
   m_TagString: Untagged
@@ -131,6 +132,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 11400000, guid: d3c057c2c2756b44e8b315a425c66ac3, type: 2}
   floatDamage: {fileID: 5858030827285220007, guid: 589bbc0e20065984fb4feb8d987ee3ea, type: 3}
   woodHitSound: {fileID: 0}
+  rockHitSound: {fileID: 0}
 --- !u!114 &989772246315200588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +239,20 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!64 &-131648433939867426
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600499502390692071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 13ad64d610481994e8b606c845970f31, type: 3}
 --- !u!1 &1629137758645805435
 GameObject:
   m_ObjectHideFlags: 0

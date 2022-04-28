@@ -24,7 +24,7 @@ public class QuestGiver : MonoBehaviour
     [SerializeField] private GameObject questMarkerInitial, questMarkerCompleted;
     [SerializeField] private GameObject acceptButton, completeButton;
     [SerializeField] private GameObject environmentObjectsOld, environmentObjectsNew;
-    [SerializeField] private AudioSource completeSound;
+    [SerializeField] private AudioSource completeSound,pickUpSound;
     private bool questAccepted = false;
     bool loopBool = true;
     private string p = "Player";
@@ -73,7 +73,7 @@ public class QuestGiver : MonoBehaviour
     public void buttonPickUpQuest()
     {
         questAccepted = true;
-
+        pickUpSound.Play();
         //do other fancy stuff
     }
     //
