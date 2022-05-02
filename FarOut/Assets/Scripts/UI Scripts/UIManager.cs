@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     //
@@ -32,6 +32,12 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
