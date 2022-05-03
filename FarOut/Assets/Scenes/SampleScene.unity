@@ -71206,6 +71206,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1515797158}
+    - target: {fileID: 6842084686209857252, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6842084686416325021, guid: d01b3d04a3394e24e92f8e569db8c666, type: 3}
       propertyPath: m_InteractionManager
       value: 
