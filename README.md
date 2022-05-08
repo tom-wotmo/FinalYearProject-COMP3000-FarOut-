@@ -1,6 +1,9 @@
 # Far Out
-
+ -Supervsior-
+James Hayter
+ -Vision-
 Far Out is a final year university piece that delves into Unity's new OpenXR development, this open world prototype features the beginning of an immersive open world RPG. questing, sword combat and the ability to chop down and mine rocks are planned for 1.0 release.
+This project aims to capture some elements found on modern RPG's and bring it into virtual reality to create a unique experience. 
 
 -- 1.0 release will feature a prototype of Far Out, with a questing system that allows you to interact with NPC's and gain rewards. The resource destruction will tie into your questing experience, with NPC's asking you to destroy and clear certain parts of the land! Sword combat is also present, being able to kill and be killed with first person sword combat once you gain your first weapon.
 
